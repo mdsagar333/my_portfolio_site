@@ -9,6 +9,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-size: 16px;
@@ -112,6 +115,7 @@ h6 {
   font-size: 1.4rem;
   cursor: pointer;
   color: #fff;
+  text-decoration: none;
 }
 
 /* nav bar style */

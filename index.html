@@ -24,7 +24,7 @@
 
     <section class="main-container">
         <!-- hero container -->
-        <article class="header_hero_container">
+        <article class="header_hero_container" id="home-container">
             
             <header class="header-container cnt_padding">
                 <div class="max_width menu_area">
@@ -41,12 +41,12 @@
                     
                     <nav class="main-nav" id='main_nav_menu'>
                         <ul>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">about</a></li>
-                            <li><a href="#">services</a></li>
-                            <li><a href="#">portfolio</a></li>
-                            <li><a href="#">pricing</a></li>
-                            <li><a href="#">contact</a></li>
+                            <li><a href="#home-container">home</a></li>
+                            <li><a href="#about-container">about</a></li>
+                            <li><a href="#service-containter">services</a></li>
+                            <li><a href="#portfolio-container">portfolio</a></li>
+                            <li><a href="#price-container">pricing</a></li>
+                            <li><a href="#contact-container">contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -59,8 +59,8 @@
                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
                 </article>
                 <article class="hero-btn-container">
-                    <button class="hero-btn blue">hire me <i class="fas fa-arrow-right"></i></button>
-                    <button class="hero-btn white">view portfolio <i class="fas fa-arrow-right"></i></button>            
+                    <a class="hero-btn blue">hire me <i class="fas fa-arrow-right"></i></a>
+                    <a class="hero-btn white" href="#portfolio-container">view portfolio <i class="fas fa-arrow-right"></i></a>            
                 </article>
                 <section class="hero-social-link-container">
                     <a href="#">+facebook</a>
@@ -72,7 +72,7 @@
         <!-- end of hero container -->
 
         <!-- about container -->
-        <article class="about-container cnt_padding">
+        <article class="about-container cnt_padding" id="about-container">
             <section class="about-img-container slideUpAnim">
                 <!-- <img src="./images/about.jpg" alt="smiling" class="about-img fluid_img"> -->
             </section>
@@ -147,7 +147,7 @@
         <!-- end of about container -->
 
         <!-- service container -->
-        <section class="service-container cnt_padding slideUpAnim">
+        <section class="service-container cnt_padding slideUpAnim" id="service-containter">
             <div class="service-title common_title">
                 <h5>SERVICES</h5>
                 <h1>
@@ -209,7 +209,7 @@
         <!-- end of counter container -->
 
         <!-- portfolio container -->
-        <section class="portfolio_container cnt_padding ">
+        <section class="portfolio_container cnt_padding " id="portfolio-container">
             <article class="portfolio_title common_title ">
                 <h5>PORTFOLIO</h5>
                 <h1>My Latest Work</h1>
@@ -280,7 +280,7 @@
         <!-- end of portfolio -->
 
         <!-- testimonial container -->
-        <section class="testimonial_container cnt_padding slideUpAnim">
+        <section class="testimonial_container cnt_padding slideUpAnim" id="testimonial-container">
             <article class="testimonial_title common_title">
                 <h5>TESTIMONIAL</h5>
                 <h1>My satisfied customer</h1>
@@ -350,7 +350,7 @@
         <!-- end of testimonial -->
 
         <!-- pricing container -->
-        <section class="price_container cnt_padding slideUpAnim">
+        <section class="price_container cnt_padding slideUpAnim" id="price-container">
             <article class="pricing_container_title common_title">
                 <h5>my pricing</h5>
                 <h1>pricing & package</h1>
@@ -378,7 +378,7 @@
         </section>
         <!-- end of pricing container -->
         <!-- contact-us container -->
-        <section class="contact_container slideUpAnim">
+        <section class="contact_container slideUpAnim" id="contact-container">
             <section class="contact_wrapper">
                 <article class="contact_location_wrapper" id="map"></article>
                 <article class="contact_info_wrapper">
