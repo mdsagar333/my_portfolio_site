@@ -115,7 +115,6 @@ h6 {
   font-size: 1.4rem;
   cursor: pointer;
   color: #fff;
-  text-decoration: none;
 }
 
 /* nav bar style */
@@ -213,6 +212,7 @@ h6 {
   border-radius: 5px;
   cursor: pointer;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 
 .blue {
