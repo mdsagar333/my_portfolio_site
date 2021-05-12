@@ -1392,3 +1392,33 @@ h6 {
     margin-bottom: 1.5rem;
   }
 }
+
+/* type effect style */
+
+#typed_text {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  height: 2.5rem;
+}
+
+#typed_text::after {
+  content: '';
+  position: absolute;
+  display: block;
+  right: -8px;
+  height: 3rem;
+  width: 4px;
+  background-color: #fff;
+  top: 0;
+  animation: blinking 0.4s infinite;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

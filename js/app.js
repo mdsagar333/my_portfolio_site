@@ -1,16 +1,24 @@
+
 const barBtn = document.getElementById('menu_bar_btn');
 const aboutBtn = document.getElementsByClassName('about-btn');
 const aboutContent = document.getElementsByClassName('about_info');
 const customer = document.getElementById('customer_count');
 const project = document.getElementById('project_count');
 const coffee = document.getElementById('coffee_count');
+const type = document.getElementById('typed_text');
 
+const containers = Array.from(document.getElementsByClassName('slideUpAnim'));
+const portfolio = Array.from(document.querySelectorAll('.portfolio_area'))
+
+
+// menu toggle function for responsive layout
 const menuBarSlideFunction = () => {
     barBtn.addEventListener('click', function(e){
     const menu = document.getElementById('main_nav_menu');
     menu.classList.toggle('nav_active');
 })
 }
+
 
 // about section class toggle function
 const aboutBtnFunctionality = () => {
@@ -42,6 +50,10 @@ const incrementCounter = (num, node,time,val) => {
     return startCounter
 }
 
+const customerCount = incrementCounter(3000, customer, 1,1);
+const projectCount = incrementCounter(320, project,50,1);
+const coffeeCount = incrementCounter(1000, coffee,10,1);
+
 // slider function
 const mySliderFunction = () => {
 let slideIndex = 0;
@@ -69,12 +81,7 @@ return () => {
     
 }
 }
-
-const slider = mySliderFunction();
-
-setInterval(slider, 4000)
-const containers = Array.from(document.getElementsByClassName('slideUpAnim'));
-const portfolio = Array.from(document.querySelectorAll('.portfolio_area'))
+// animation on scroll functionalities
 
 let observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -114,10 +121,6 @@ function initMap() {
 
 // end of map section
 
-window.addEventListener('load', (e) => {
-    containers.forEach(con => observer.observe(con))
-    portfolio.forEach(port => observer2.observe(port))
-})
 
 
 window.addEventListener('scroll', function(){
@@ -136,49 +139,53 @@ window.addEventListener('scroll', function(){
     
 })
 
+// typing effectin hero container area functionalies
+let i = 0;
+const typeText = ["A web devloper", "A web designer", "A wordpress developer"]
+const speed = 100;
+let backwards = false;
+let line = 0;
+const typeWritter = () => {
 
-const customerCount = incrementCounter(3000, customer, 1,1);
-const projectCount = incrementCounter(320, project,50,1);
-const coffeeCount = incrementCounter(1000, coffee,10,1);
+    if (i < typeText[line].length && !backwards){
+        document.getElementById('typed_text').innerHTML += typeText[line][i];
+        i++;
+        setTimeout(typeWritter, speed)
+    }else if((i >= typeText[line].length || backwards) && i > 0){
+        console.log(i, backwards)
+        if (i == typeText[line].length){
+            --i;
+            backwards = true;
+            setTimeout(typeWritter, 2000)
+        }else {
+            --i;
+        backwards = true;
+        document.getElementById('typed_text').innerHTML = typeText[line].substring(0,i);
+        // i--;
+        if (i == 0){
+            backwards = false;
+            line = line < typeText.length - 1 ? line + 1 : 0;
+        }
+        setTimeout(typeWritter, speed)
+        }
+        
+    }
+}
+
+// some functionality after page load
+
+window.addEventListener('load', (e) => {
+    containers.forEach(con => observer.observe(con))
+    portfolio.forEach(port => observer2.observe(port))
+    setTimeout(typeWritter, 1000)
+    // typeWritter()
+})
+
 
 aboutBtnFunctionality()
 menuBarSlideFunction()
 
 
-
-
-
-
-
-
-
-
-
-
-
-// const slider = () => {
-//     const slider = document.getElementsByClassName('slide_wrapper');
-//     let isActive = false;
-//     for (let i = 0; i < slider.length; i++){
-//         if (slider[i].className.endsWith('active_slide')){
-//             slider[i].className = 'slide_wrapper previous_slide';
-//             continue;
-//         }
-//         if (slider[i].className.endsWith('next_slide')){
-//             if (!isActive){
-//                 slider[i].className = 'slide_wrapper active_slide';
-//                 isActive =true;
-//                 continue;
-//             }
-//         }
-//         if (slider[i].className.endsWith('previous_slide')){
-//             slider[i].className = 'slide_wrapper next_slide';
-//             continue;
-//         }
-        
-//         if (slider[i].className.endsWith('slide_wrapper')){
-//             slider[i].className = 'slide_wrapper next_slide';
-            
-//         }
-//     }
-// }
+// calling the slider function
+const slider = mySliderFunction();
+setInterval(slider, 4000)
